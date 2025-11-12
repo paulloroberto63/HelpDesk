@@ -1,5 +1,5 @@
+import { Routes } from "./routes"
+
 export function App(){
-  return (
-    <h1>APP</h1>
-  )
+  return <Routes />
 }
