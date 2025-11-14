@@ -2,7 +2,8 @@ import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import { useState } from "react";
 
-export function SignIn() {
+export function SignUp() {
+  const [name, setName] = useState("")
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsloading] = useState(false);
@@ -10,7 +11,7 @@ export function SignIn() {
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     alert("Enviado");
-    console.log(email, password);
+    console.log(name,email,password);
   }
 
   return (
@@ -28,11 +29,19 @@ export function SignIn() {
     >
 
       <div>
-        <h2 className="text-2xl font-bold text-gray-800">Acesse o portal</h2>
+        <h2 className="text-2xl font-bold text-gray-800">Crie sua Conta</h2>
         <p className="text-sm text-gray-400 mt-1">
-          Entre usando seu e-mail e senha cadastrados
+          Informe seu nome, email e senha
         </p>
       </div>
+
+      <Input
+        required
+        legend="Nome"
+        placeholder="Digite o nome completo"
+        onChange={(e) => setName(e.target.value)}
+      />
+
 
       <Input
         required
@@ -52,9 +61,10 @@ export function SignIn() {
 
       
       <Button type="submit" isLoading={isLoading}>
-        Entrar
+        Cadastrar
       </Button>
 
+      
       <div
         className=" 
           p-6 
@@ -63,11 +73,11 @@ export function SignIn() {
         "
       >
         <h3 className="text-lg font-bold text-gray-800">
-          Ainda não tem uma conta?
+          Já uma conta?
         </h3>
-        <p className="text-sm text-gray-400">Cadastre agora mesmo</p>
+        <p className="text-sm text-gray-400">Entre agora mesmo</p>
 
-        <a href="/signup" className="w-full p-4 bg-gray-500 text-gray-200 font-bold flex items-center justify-center rounded-lg mt-3 hover:bg-gray-400 transition ease-linear">Criar conta</a>
+        <a href="/" className="w-full p-4 bg-gray-500 text-gray-200 font-bold flex items-center justify-center rounded-lg mt-3 hover:bg-gray-400 transition ease-linear">Acessar conta</a>
       </div>
     </form>
   );
