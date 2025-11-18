@@ -7,7 +7,7 @@ export function Table() {
     return (
         <div className="overflow-hidden rounded-lg border border-gray-500 mt-10">
             <table className="w-full table-auto text-sm">
-                <thead className="text-gray-500">
+                <thead className="text-gray-400">
                 <tr>
                     <th className="p-3 text-left">Atualizado</th>
                     <th className="p-3 text-left max-md:hidden">Id</th>
